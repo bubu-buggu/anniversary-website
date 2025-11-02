@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dear Buggu 💖</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Message 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* allow scrolling for this page */
+    body {
+      overflow-y: auto;
+      height: auto;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+  </style>
 </head>
 <body>
-    <div id="hearts-container"></div>
+  <div id="hearts-container"></div>
 
-    <div class="container fade-in">
-        <h1>MY DEAR BUGGU 💕</h1>
-        <p class="final-message">
-            First of all Happy 2 Years Anniversary to you ❤️💕💓💝💗.<br><br>
-            Thankyou for coming this far with me which I never expected in my life.<br><br>
-            Ab simple language me likh deti hu 😂.<br><br>
-            2 years back, a boy came and asked "Kya hum try kar sakte hain?" and it turned out like this.<br><br>
-            Maine kabhi imagine nahi kiya tha ki mera ek 'yes' meri life me itni khushiyaan le ke aayega.<br><br>
-            Waise toh abhi sirf 2 saal hue hai par mujhe aapke saath lifetime rehna hai.<br><br>
-            Thodi cringe line hai par... I also wanna grow old with you 🥹💞<br><br>
-            Aur han mere upar chillaya mat karo 😒 nahi toh maar dungi 👊👊.<br><br>
-            Aur nahi likh rahi ab, busy rehte ho na aap 😝.<br><br>
-            Just want to say, <b>"I LOVE YOU TODAY, TOMORROW AND FOREVER ♾️"</b> 💖<br><br>
-            Please don’t ever leave me 😭😭.<br><br>
-            <b>YOURS ONE & ONLY LOVE</b><br>
-            BUBU, MUTKI, BUTKI, CHAMKAADAR, GUDDA, BETA, PRINCESS 💖💌 (Aur nahi yaad aa raha abhi 😂)
-        </p>
+  <div class="container fade-in">
+    <h1>💖 My Dear Buggu 💖</h1>
+    <p>
+First of all, Happy 2 Years Anniversary to you ❤️💕💓💝💗  
+Thank you for coming this far with me which I never expected in my life.  
 
-        <p class="the-end">💗 HAPPY 2 YEARS 💗</p>
-    </div>
+Ab simple language me likh deti hu 😂.  
+2 years back, a boy came and asked *"Kya hum try kar sakte hain"*  
+and it turned out like this.  
 
-    <script>
-        // floating hearts animation
-        const heartsContainer = document.getElementById('hearts-container');
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.textContent = '💖';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (3 + Math.random() * 4) + 's';
-            heartsContainer.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        setInterval(createHeart, 300);
-    </script>
+Maine kabhi imagine nahi kiya tha ki mera ek *yes* meri life me itni khushiyaan le ke aayega.  
+Waise toh abhi sirf 2 saal hue hain,  
+par mujhe aapke saath lifetime rehna hai.  
+
+Thodi cringe line hai but...  
+I also wanna grow old with you 🥹💕  
+
+Aur haan, mere upar chillaya mat karo 😒  
+nahi toh maar dungi 👊👊😂  
+
+Aur nahi likh rahi ab, busy rehte ho na aap 😤  
+Just want to say...  
+
+💞 I LOVE YOU TODAY, TOMORROW AND FOREVER ♾️ 💞  
+
+Please don't ever leave me 😭😭  
+
+— Yours One & Only Love 💌  
+BUBU, MUTKI, BUTKI, CHAMKAADAR, GUDDA, BETA, PRINCESS 💖  
+(Aur nahi yaad aa raha abhi 😆)
+    </p>
+
+    <div class="the-end">💗 Happy 2 Years Anniversary 💗</div>
+  </div>
+
+  <script>
+    // floating hearts animation
+    const hearts = document.getElementById("hearts-container");
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+      hearts.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  </script>
 </body>
 </html>
