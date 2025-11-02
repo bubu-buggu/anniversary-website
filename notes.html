@@ -11,7 +11,9 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      overflow-y: auto; /* allows scrolling */
+      overflow-y: auto;
+      scroll-behavior: smooth; /* enables smooth scrolling */
+      min-height: 120vh; /* ensures enough height to scroll on small screens */
     }
 
     h1 {
@@ -52,9 +54,11 @@
       padding: 14px 30px;
       font-size: 18px;
       cursor: pointer;
-      margin: 40px auto 60px;
+      margin: 40px auto 80px;
       text-decoration: none;
       transition: 0.3s;
+      position: relative;
+      top: 30px;
     }
 
     .next-btn:hover {
@@ -65,8 +69,22 @@
     footer {
       color: white;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       opacity: 0.8;
+    }
+
+    /* little floating hearts animation for fun */
+    @keyframes floatHearts {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      animation: floatHearts 6s linear infinite;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -81,8 +99,21 @@
     <img src="images/note5.jpg" alt="Note 5" />
   </div>
 
-  <a href="nextpage.html" class="next-btn">Next 💞</a>
+  <a href="message.html" class="next-btn">Next 💞</a>
 
   <footer>Made with 💖 by Bubu for Buggu</footer>
+
+  <script>
+    // floating hearts effect
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 800);
+  </script>
 </body>
 </html>
