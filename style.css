@@ -212,6 +212,55 @@ body {
   line-height: 1.6;
   font-size: 1.2rem;
 }
+/* ===========================
+   Notes Page Fix 🌷
+=========================== */
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  min-height: 100vh; /* ensures scroll on small screens */
+  box-sizing: border-box;
+}
+
+.notes-container img {
+  width: 260px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.notes-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Makes sure Next button is visible 💖 */
+.next-button {
+  display: block;
+  margin: 30px auto;
+  background-color: #ff66a3;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #ff3385;
+}
+
+/* Ensure body can scroll properly on all screens */
+body {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
 
 
 
