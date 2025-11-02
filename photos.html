@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            height: 70vh;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Bubble hearts */
+        .bubble {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: rise 10s linear infinite;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-800px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Next button */
+        .next-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #ff4081;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+            background: #ff66a3;
+        }
+
+        /* Fade-out animation for the end */
+        .fade-out {
+            animation: fadeOut 3s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <div class="slide fade active"><img src="images/photo1.jpg" alt="Memory 1"></div>
+        <div class="slide fade"><img src="images/photo2.jpg" alt="Memory 2"></div>
+        <div class="slide fade"><img src="images/photo3.jpg" alt="Memory 3"></div>
+        <div class="slide fade"><img src="images/photo4.jpg" alt="Memory 4"></div>
+        <div class="slide fade"><img src="images/photo5.jpg" alt="Memory 5"></div>
+        <div class="slide fade"><img src="images/photo6.jpg" alt="Memory 6"></div>
+        <div class="slide fade"><img src="images/photo7.jpg" alt="Memory 7"></div>
+        <div class="slide fade"><img src="images/photo8.jpg" alt="Memory 8"></div>
+        <div class="slide fade"><img src="images/photo9.jpg" alt="Memory 9"></div>
+        <div class="slide fade"><img src="images/photo10.jpg" alt="Memory 10"></div>
+    </div>
+
+
+    <audio id="bg-music" src="music/Bheegi Si Bhaagi Si-(Mr-Jat.in).mp3" autoplay loop></audio>
+    <div class="next-btn">
+        <button onclick="window.location.href='notes.html'">Next →</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const music = document.getElementById('bg-music');
+        let current = 0;
+
+        // Music auto-play
+        window.addEventListener('load', () => {
+            music.currentTime = 29; // start at 0:29
+            music.play();
+        });
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            current++;
+            if (current < slides.length) {
+                showSlide(current);
+            } else {
+                document.querySelector('.slideshow-container').classList.add('fade-out');
+                setTimeout(() => {
+                    music.pause();
+                    window.location.href = 'notes.html';
+                }, 3000);
+            }
+        }
+
+        // Change slide every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Floating bubbles
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.width = bubble.style.height = Math.random() * 20 + 10 + 'px';
+            bubble.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(bubble);
+            setTimeout(() => bubble.remove(), 10000);
+        }
+        setInterval(createBubble, 400);
+
+        function goToNotes() {
+            music.pause();
+            window.location.href = "notes.html";
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary 💕</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="hearts-container"></div>
+
+  <div class="container fade-in">
+    <h1>HI BUGGU ❤️ HAPPY ANNIVERSARY!</h1>
+    <p>To continue, please enter the password <br> (Hint: Our Special Day 💕)</p>
+
+    <input type="password" id="password" placeholder="Enter 4-digit password" />
+    <br />
+    <button onclick="checkPassword()">Submit 💖</button>
+  </div>
+
+  <!-- Floating hearts animation -->
+  <script>
+    const heartsContainer = document.getElementById('hearts-container');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+  <!-- Password logic -->
+  <script>
+    function checkPassword() {
+      const enteredPassword = document.getElementById("password").value;
+      if (enteredPassword === "0611") {
+        // ✅ redirect to your slideshow page
+        window.location.href = "photos.html";
+      } else {
+        alert("Oops! Wrong password 😅 Try again!");
+      }
+    }
+  </script>
+</body>
+</html>

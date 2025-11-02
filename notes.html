@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes for My Buggu 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hearts-container"></div>
+    <div class="container fade-in">
+        <h1>💖 Sweet Notes for You 💖</h1>
+        <p>Here are a few notes just for you, my love 🥰</p>
+
+        <div class="notes-gallery">
+            <!-- Replace the image links below with your note images -->
+            <img src="notes/note1.jpg" alt="Note 1" class="note-img">
+            <img src="notes/note2.jpg" alt="Note 2" class="note-img">
+            <img src="notes/note3.jpg" alt="Note 3" class="note-img">
+            <img src="notes/note4.jpg" alt="Note 4" class="note-img">
+            <img src="notes/note5.jpg" alt="Note 5" class="note-img">
+        </div>
+
+        <button class="next-btn" onclick="nextPage()">Next 💌</button>
+    </div>
+
+    <script>
+        // 🌸 Floating Hearts Animation
+        const heartsContainer = document.getElementById('hearts-container');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '💗';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 8000);
+        }
+        setInterval(createHeart, 300);
+
+        // 💕 Next page button
+        function nextPage() {
+            window.location.href = 'message.html';
+        }
+    </script>
+</body>
+</html>

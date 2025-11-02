@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dear Buggu 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hearts-container"></div>
+
+    <div class="container fade-in">
+        <h1>MY DEAR BUGGU 💕</h1>
+        <p class="final-message">
+            First of all Happy 2 Years Anniversary to you ❤️💕💓💝💗.<br><br>
+            Thankyou for coming this far with me which I never expected in my life.<br><br>
+            Ab simple language me likh deti hu 😂.<br><br>
+            2 years back, a boy came and asked "Kya hum try kar sakte hain?" and it turned out like this.<br><br>
+            Maine kabhi imagine nahi kiya tha ki mera ek 'yes' meri life me itni khushiyaan le ke aayega.<br><br>
+            Waise toh abhi sirf 2 saal hue hai par mujhe aapke saath lifetime rehna hai.<br><br>
+            Thodi cringe line hai par... I also wanna grow old with you 🥹💞<br><br>
+            Aur han mere upar chillaya mat karo 😒 nahi toh maar dungi 👊👊.<br><br>
+            Aur nahi likh rahi ab, busy rehte ho na aap 😝.<br><br>
+            Just want to say, <b>"I LOVE YOU TODAY, TOMORROW AND FOREVER ♾️"</b> 💖<br><br>
+            Please don’t ever leave me 😭😭.<br><br>
+            <b>YOURS ONE & ONLY LOVE</b><br>
+            BUBU, MUTKI, BUTKI, CHAMKAADAR, GUDDA, BETA, PRINCESS 💖💌 (Aur nahi yaad aa raha abhi 😂)
+        </p>
+
+        <p class="the-end">💗 HAPPY 2 YEARS 💗</p>
+    </div>
+
+    <script>
+        // floating hearts animation
+        const heartsContainer = document.getElementById('hearts-container');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (3 + Math.random() * 4) + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
