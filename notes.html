@@ -7,11 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="hearts-container"></div>
-
-  <div class="container fade-in">
-    <h1>💕 Our Cute Notes 💕</h1>
-
   <div class="notes-container">
     <img src="notes/note1.jpg" alt="Note 1" />
     <img src="notes/note2.jpg" alt="Note 2" />
@@ -20,26 +15,8 @@
     <img src="notes/note5.jpg" alt="Note 5" />
   </div>
 
+  <a href="message.html" class="next-button">Next 💞</a>
 
-    <a href="message.html">
-      <button class="next-btn">Next 💞</button>
-    </a>
-  </div>
-
-  <script>
-    // floating hearts animation
-    const hearts = document.getElementById("hearts-container");
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerText = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-      hearts.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }, 300);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
