@@ -3,87 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Message 💖</title>
+  <title>My Message 💌</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* allow scrolling for this page */
     body {
-      overflow-y: auto;
-      height: auto;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #ffc0cb, #ff69b4);
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      padding: 30px;
-      box-sizing: border-box;
-    }
-    .container {
+      background: linear-gradient(to bottom, #ff9ecd, #ffb6d5, #ffcce0);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: white;
       text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      min-height: 100vh;
+    }
+
+    .message-container {
+      margin-top: 140px; /* ensures full message is visible */
+      margin-bottom: 100px;
       padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 18px;
       animation: fadeIn 2s ease-in-out;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(255,255,255,0.8);
+
+    .footer {
+      margin-top: 60px;
+      font-weight: bold;
+      font-size: 22px;
     }
-    p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      white-space: pre-line;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
-  <div id="hearts-container"></div>
+  <div class="message-container">
+    <p>MY DEAR BUGGU, 💞</p>
 
-  <div class="container fade-in">
-    <h1>💖 My Dear Buggu 💖</h1>
     <p>
-First of all, Happy 2 Years Anniversary to you ❤️💕💓💝💗  
-Thank you for coming this far with me which I never expected in my life.  
-
-Ab simple language me likh deti hu 😂.  
-2 years back, a boy came and asked *"Kya hum try kar sakte hain"*  
-and it turned out like this.  
-
-Maine kabhi imagine nahi kiya tha ki mera ek *yes* meri life me itni khushiyaan le ke aayega.  
-Waise toh abhi sirf 2 saal hue hain,  
-par mujhe aapke saath lifetime rehna hai.  
-
-Thodi cringe line hai but...  
-I also wanna grow old with you 🥹💕  
-
-Aur haan, mere upar chillaya mat karo 😒  
-nahi toh maar dungi 👊👊😂  
-
-Aur nahi likh rahi ab, busy rehte ho na aap 😤  
-Just want to say...  
-
-💞 I LOVE YOU TODAY, TOMORROW AND FOREVER ♾️ 💞  
-
-Please don't ever leave me 😭😭  
-
-— Yours One & Only Love 💌  
-BUBU, MUTKI, BUTKI, CHAMKAADAR, GUDDA, BETA, PRINCESS 💖  
-(Aur nahi yaad aa raha abhi 😆)
+      First of all, Happy 2 Years Anniversary to you ❤️💕💓💝💗. <br />
+      Thank you for coming this far with me — which I never expected in my life. <br />
+      Ab simple language me likh deti hu 😂
     </p>
 
-    <div class="the-end">💗 Happy 2 Years Anniversary 💗</div>
-  </div>
+    <p>
+      2 years back, a boy came and asked <br />
+      <b>“Kya hum try kar sakte hain?”</b> 💬 <br />
+      and it turned out like this 🥹
+    </p>
 
-  <script>
-    // floating hearts animation
-    const hearts = document.getElementById("hearts-container");
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerText = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-      hearts.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }, 300);
-  </script>
+    <p>
+      Maine kabhi imagine nahi kiya tha ki mera ek “yes” meri life me itni khushiyaan le ke aayega 💫 <br />
+      Waise toh abhi sirf 2 saal hue hai, par mujhe aapke saath life time rehna hai 💕 <br />
+      Thodi cringe line hai 😅 par I also wanna grow old with you 😭💖
+    </p>
+
+    <p>
+      Aur haan mere upar chillaya mat karo 😒 <br />
+      nahi toh maar dungi 👊👊😂
+    </p>
+
+    <p>
+      Aur nahi likh rahi ab, busy rehte ho na aap 😤 <br />
+      Just want to say...
+    </p>
+
+    <p>
+      💞 <b>I LOVE YOU TODAY, TOMORROW AND FOREVER ♾️</b> 💞
+    </p>
+
+    <p>Please don't ever leave me 😭😭</p>
+
+    <p>
+      — Yours One & Only Love 💌 <br />
+      <b>BUBU, MUTKI, BUTKI, CHAMKAADAR, GUDDA, BETA, PRINCESS 💖💌</b> <br />
+      (Aur nahi yaad aa raha abhi 😆)
+    </p>
+
+    <div class="footer">💗 Happy 2 Years Anniversary 💗</div>
+  </div>
 </body>
 </html>
