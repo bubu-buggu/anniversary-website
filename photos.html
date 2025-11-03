@@ -115,6 +115,12 @@
 
 
     <audio id="bg-music" src="music/Bheegi Si Bhaagi Si-(Mr-Jat.in).mp3" autoplay loop></audio>
+    <script>
+        const music = document.getElementById("bg-music");
+        music.addEventListener("loadedmetadata", () => {
+            music.currentTime = 29; // start from 0:29
+        });
+    </script>
     <div class="next-btn">
         <button onclick="window.location.href='notes.html'">Next →</button>
     </div>
@@ -173,4 +179,5 @@
 
 </body>
 </html>
+
 
